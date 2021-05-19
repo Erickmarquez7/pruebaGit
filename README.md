@@ -5,7 +5,7 @@
 Los principales comando son
   * git init: Inicia un repositorio local
   * git status: Muestra el status de los archivos
-  * git diff <rama> > ~/nombre.diff: Crea un diferencial de la rama
+  * git diff < rama > > ~/nombre.diff: Crea un diferencial de la rama
   * git add: Guarda los cambios
   * git commit -m: Añade los cambios con un mensaje
   * git branch nombre: Crea una rama de trabajo
