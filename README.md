@@ -16,5 +16,6 @@ Los principales comando son
 Los principales comandos son
   * git clone htpps://github.como/usuario/nombre... : Clona el repisotorio dado
   * git push origin rama: Subo la rama que indico a la rama donde estoy (recomendable usar _git status_ )
-  * git remote add origin https://github.com/usuario/nombreDelRepo.git: Sincroniza
-  * git push -u origin master: Sube los cambios 
+  * git remote add origin https://github.com/usuario/nombreDelRepo.git: Sincroniza por medio de HTTPS
+  * git remote add origin git@github.com:usuario/nombreDelRepro.git: Sincorniza por medio de SSH
+  * git push -u origin master: Sube los cambios al repositorio en linea
