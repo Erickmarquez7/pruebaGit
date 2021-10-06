@@ -27,7 +27,7 @@ Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algú
 
 ## Github: Es remoto
 
-#####Los principales comandos son
+##### Los principales comandos son
   * **git clone htpps://github.como/usuario/nombre:** Clona el repisotorio dado
   * **git remote add origin https://github.com/usuario/nombreDelRepo.git**: Sincroniza por medio de HTTPS (En las ultimas versiones es con SSH)
   * **git remote add origin  git@github.com:usuario/nombreDelRepro.git**: Sincorniza por medio de SSH
