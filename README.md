@@ -3,7 +3,7 @@
 ## Git: Es local
 Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algún commit
 
-####Los principales comando son
+#### Los principales comando son
 
   * **git init**: Inicia un repositorio local
   * **git add nombre**: Guarda los cambios
@@ -11,8 +11,8 @@ Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algú
   * **git status**: Muestra el status de los archivos
   * **git log**: Muestra el historial de versiones de la _rama_, **no** de todo el repositorio
   
- 
-####Trabjando con ramas
+
+#### Trabjando con ramas
    * **git branch rama**: Crea una rama de trabajo
    * **git checkout rama**: Cambia a la rama de trabajo
     * Así git checkout master: cambia a la rama principal
