@@ -67,6 +67,8 @@ doc/**/*.txt
 
 -- Es recomendable hacer esto al iniciar un repoxd
 
+Editado pero no preparado
+
 git diff 
 Así a secas muestra las diferencias entre lo que estoy trabajando y lo que está
 en el stage, cambios que aun NO están preparados
