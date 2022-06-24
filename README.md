@@ -17,7 +17,7 @@ Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algú
 
   * **git init**: Inicia un repositorio local
   * **git add nombre**: Empieza a rastrear archivos así como prepararlos para el stage
-  * **git commit -m "commit"**: Añade los cambios con un mensaje
+  * **git commit -m "commit"**: Confirma los cambios al repositorio de git .git
   * **git status**: Muestra el status de los archivos
   * **git log**: Muestra el historial de versiones de la _rama_, **no** de todo el repositorio
   

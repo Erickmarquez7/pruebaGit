@@ -1,0 +1,75 @@
+Ps parte 1 explicar que pedo
+- Como es que guarda la informacion, a través de fotos y refrencias
+Mas no las diferencias
+
+- Explicar los 3 estados de archivo, así como las 3 areas
+
+-- Comandos 
+    git config --global user.email = ...
+    git config --global user.name = ...
+
+    git help --comando
+    git init
+    git add <archivo>
+    git status
+    git commit <archivo>
+
+Ejercicios xd:
+Crear archivo y modificarlo de tal manera que al ejecutar git status -s tengan las letras (No importa el orden)
+
+??    - Archivo no rastreado
+A     - Archivo recién rastreado
+M     - Cuando modificas el archivo y lo añades al stage, preparado
+ M    - Solo modificas el archivo, sin preparar, no has hecho add 
+MM    - Cuando de ultimo minuto modificas el archivo pero no lo has añadido
+        haciendo así que aparezca tanto en confirmado como no confirmado
+
+git add (MM) -> (M)
+pk ya lo subiste al stage
+------------------------------------------------------------------------------------
+Ignorar archivos
+Creando un archivo .gitignore y poniendo los que no queremos que tome en cuenta
+*.[abc] ignora los que terminan en .a || .b || .c, o sea los [] lo hacen or
+
+*.~ ignora los que terminen en ~ 
+*.java los que terminan en java, es decir toda la cadena
+
+? Caracter cualquiera
+
+[0-9] Cualquier caracter entre ellos
+
+a/**/z Cualquier directorio entre ellos, anidados a/z, a/b/c, a/b/f/z
+
+#comentario en tal archivo xd
+/comenzando así evita la recursividad
+Así al final especifica un directoio/
+!Niega la expresión
+
+ejemplos:
+
+#niega todos los javac
+*.javac 
+
+#excepto este, aun cuando se especificó anteriormente
+!main.javac
+
+#ignora solo el archivo ridmi de la raiz, mas no de la subcarpetas
+/ridmi
+
+#todos los archivos de la carpeta images
+/images
+
+#ignora doc/notes.txt, pero no doc/sub/notes.txt
+doc/*.txt
+
+#para eso es, ignora TODOS los archivos .txt 
+doc/**/*.txt
+
+-- Es recomendable hacer esto al iniciar un repoxd
+
+git diff 
+Así a secas muestra las diferencias entre lo que estoy trabajando y lo que está
+en el stage, cambios que aun NO están preparados
+
+git diff --staged
+Lo que he preparado y será incluido en la confirmacion

@@ -3,6 +3,5 @@ public class Main{
         System.out.println("Me quiero morir");
         System.out.println("Version 1.0.1");
         System.out.println("Me quiero morir v3.0");
-        
     }
 }
