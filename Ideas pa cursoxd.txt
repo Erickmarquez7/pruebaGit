@@ -7,6 +7,7 @@ Mas no las diferencias
 -- Comandos 
     git config --global user.email = ...
     git config --global user.name = ...
+    git config --list
 
     git help --comando
     git init
@@ -23,11 +24,13 @@ M     - Cuando modificas el archivo y lo añades al stage, preparado
  M    - Solo modificas el archivo, sin preparar, no has hecho add 
 MM    - Cuando de ultimo minuto modificas el archivo pero no lo has añadido
         haciendo así que aparezca tanto en confirmado como no confirmado
+ D    - Delete no preparado
+D     - Delete preaparado  
 
 git add (MM) -> (M)
 pk ya lo subiste al stage
 ------------------------------------------------------------------------------------
-Ignorar archivos
+| Ignorar archivos
 Creando un archivo .gitignore y poniendo los que no queremos que tome en cuenta
 *.[abc] ignora los que terminan en .a || .b || .c, o sea los [] lo hacen or
 
@@ -68,10 +71,59 @@ doc/**/*.txt
 -- Es recomendable hacer esto al iniciar un repoxd
 
 Editado pero no preparado
-
+| 
 git diff 
 Así a secas muestra las diferencias entre lo que estoy trabajando y lo que está
 en el stage, cambios que aun NO están preparados
 
 git diff --staged
 Lo que he preparado y será incluido en la confirmacion
+
+git commit -m "con mensaje"
+
+| Eliminar archivos
+Es necesario eliminarlos del staged
+git rm 
+Lo elimina del work directory así como del staged, es decir, lo prepara
+
+git rm --staged || --cached <archivo>
+Lo elimina solo del stage, se mantiene en el work directory
+
+Admite expresiones regulares
+
+Podemos renombrar archivos con 
+git mv
+
+Para el historial
+git log
+
+Podemos pasarle parametros para buscar lo que queremos
+-p mustra el historial con sus diferencias
+-2 los ultimos 2
+-n los ultimos n
+--stat estadisticas 
+--pretty añade estilo
+    =oneline lo imprime en una linea
+    =short ps corto
+    =format: para añadir formato
+        "%h"   hash abreviado, total con mayuscula
+        "%t"   hash del arbol abreviado
+        "%p"   hashes del padre abreviado
+        "%an"  nombre del autor
+        "%ae"  email del autor
+        "ar"   fecha
+        "%s"   asunto
+
+git log --pretty="format: %h - %an, : %s"
+
+--graph muestra el grafo
+--since=2.weeks
+Fecha en especifico
+--since="2020-10-10"
+Desde el 2020 octubre 10
+--until="2020-20-11"
+hasta el siguiente dia xd
+--author
+por autor xd
+
+Conclusion, ps son consultas en bases de datos

@@ -6,7 +6,7 @@ Git tiene 3 estados
 El area de trabajo     -     El stage/limbo      -  El directorio git
 Archivos modificados   -   Archivos preparados   -  Archivos confirmados
 
-                  git add ->               git commit ->
+.                 git add ->               git commit ->
 
 # Comandos básicos de git
 
