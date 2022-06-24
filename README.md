@@ -1,3 +1,13 @@
+# Un poco de teoria
+Los archivos para git los toma como rastreados o sin rastrear
+Es decir, los que está tomando en cuenta.
+
+Git tiene 3 estados
+El area de trabajo     -     El stage/limbo      -  El directorio git
+Archivos modificados   -   Archivos preparados   -  Archivos confirmados
+
+                  git add ->               git commit ->
+
 # Comandos básicos de git
 
 ## Git: Es local
@@ -6,7 +16,7 @@ Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algú
 #### Los principales comando son
 
   * **git init**: Inicia un repositorio local
-  * **git add nombre**: Guarda los cambios
+  * **git add nombre**: Empieza a rastrear archivos así como prepararlos para el stage
   * **git commit -m "commit"**: Añade los cambios con un mensaje
   * **git status**: Muestra el status de los archivos
   * **git log**: Muestra el historial de versiones de la _rama_, **no** de todo el repositorio

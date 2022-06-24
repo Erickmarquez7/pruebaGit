@@ -4,5 +4,7 @@ public class Objeto{
         mensaje = texto;
         System.out.println(mensaje+ ", creado");
 
+        System.out.println("Me quiero morir");
+
     }
 }
