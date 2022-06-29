@@ -127,3 +127,51 @@ hasta el siguiente dia xd
 por autor xd
 
 Conclusion, ps son consultas en bases de datos
+
+git commit --amend sobre escribe el commit anterior, por si se te olvidó algo xd
+ps pa que no hagas dos commits
+
+git restore --staged <archivo> saca archivos del staged
+git restore <archivo> devuelve al estado anterior al archivo modificado
+
+Así que Ojazo con este ultimo xd
+
+
+-----------------------------REMOTOS--------------------------
+Remoto es basicamente el servidor en linea, por lo general es origin
+git remote pa ver los remotos 
+-v para ver los link asociados
+
+git remote add [nombre] [url] para añadir remoto
+git remote add origin https://marquezErick/....
+
+git fetch [nombre-del-remoto] trae todos los cambios que aun no tengo en dicho remoto
+git fecth origin
+
+*Cuando clonamos un repo git clone, el comando automaticamente añade el remoto origin
+clone es como un git init; git remote add origin; git fetch, todo en uno xd
+
+git fecth Solo trae la info, NO la mezcla
+
+git pull trae y combina dichos cambios a la rama que configuré
+
+git push [nombre-remoto] [nombre-rama] envio los cambios al servidor de mi rama master
+git push origin master
+
+git remote show [nombre-rama] muestra mas detallada 
+
+git remote rename [anterior] [nueva] renombra el remoto
+
+
+------------------------ALIAS-----------------------------
+Recordemos la configuración de config
+
+git config --global ......
+
+Podemos definir alias de comandos
+
+git config --global alias.[newComm] [commando]
+
+ejemplos
+git config --global alias.co commit
+git config --global alias.st status
