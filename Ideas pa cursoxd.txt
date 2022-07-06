@@ -162,6 +162,7 @@ git remote show [nombre-rama] muestra mas detallada
 
 git remote rename [anterior] [nueva] renombra el remoto
 
+{Cambio extras para que diverga la rama equis dedede}
 
 ------------------------ALIAS-----------------------------
 Recordemos la configuración de config
