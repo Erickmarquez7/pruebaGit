@@ -175,3 +175,14 @@ git config --global alias.[newComm] [commando]
 ejemplos
 git config --global alias.co commit
 git config --global alias.st status
+
+-------------------------RAMAS--------------------------------
+Las ramas son simplemente apuntadores a los commits xd
+Cuando creamos una nueva rama simplemente creamos un apuntador 
+
+git branch vemos las ramas
+git branch <nueva-rama>
+
+git checkout cambiamos de rama
+
+Cuando hacemos el commit creamos el nodo de la rama
