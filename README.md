@@ -1,4 +1,4 @@
-# Un poco de teoria
+## Un poco de teoria
 Los archivos para git los toma como rastreados o sin rastrear
 Es decir, los que está tomando en cuenta.
 
@@ -25,14 +25,21 @@ Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algú
 
   * **git commit -m "mensaje"**: Confirma los cambios al repositorio de git .git
   Se puede poner -a para saltarnos el git add
+  --amend sobreescribe el mensaje del commit
 
   * **git status**: Muestra el status de los archivos, -s para abreviar
+
+  * **git restore**: --Vuelve un paso atrás el estado del area de trabajo (peligro)
+  --staged Vuelve un paso atrás pero del staged
   
   * **git log**: Muestra el historial de versiones de la _rama_, **no** de todo el repositorio
   Algunas banderas son   
   * -p muetras la diferencias
   * -n muestra los ultimos n commits
   * -stat muestra stadisticas
+  * --graph muestra el grafo
+  * --since=[time ]
+  * --until
   * -pretty le da un formato bonito
   Algunas banderas para pretty son 
   * oneline para que se muestre en una linea
@@ -41,8 +48,8 @@ Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algú
   * %h hash abreviado
   * %a arbol abreviado
   * %an nombre del autor 
-  * 
-  * 
+  * %ae email del autor
+  * %ar fecha del commit
 
 
 
