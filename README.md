@@ -6,21 +6,33 @@ Git tiene 3 estados
 El area de trabajo     -     El stage/limbo      -  El directorio git
 Archivos modificados   -   Archivos preparados   -  Archivos confirmados
 
-.                 git add ->               git commit ->
+------------------- git add -> -------------- git commit ->
 
 # Comandos básicos de git
 
 ## Git: Es local
 Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algún commit
 
-#### Los principales comando son
+#### Comandos básicos de gran utilidad
+
+  * **git config** configuración de git, de prefrencia con --global para aplicar
+  a todos los repositorios
+  Con user.name, user.email, alias.[nuevo comando] 'comando'
 
   * **git init**: Inicia un repositorio local
+
   * **git add nombre**: Empieza a rastrear archivos así como prepararlos para el stage
-  * **git commit -m "commit"**: Confirma los cambios al repositorio de git .git
-  * **git status**: Muestra el status de los archivos
-  * **git log**: Muestra el historial de versiones de la _rama_, **no** de todo el repositorio
+
+  * **git commit -m "mensaje"**: Confirma los cambios al repositorio de git .git
+  Se puede poner -a para saltarnos el git add
+
+  * **git status**: Muestra el status de los archivos, -s para abreviar
   
+  * **git log**: Muestra el historial de versiones de la _rama_, **no** de todo el repositorio
+
+  
+
+
 
 #### Trabjando con ramas
    * **git branch rama**: Crea una rama de trabajo
