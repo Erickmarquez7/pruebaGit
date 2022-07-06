@@ -16,7 +16,7 @@ Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algú
 #### Comandos básicos de gran utilidad
 
   * **git config** configuración de git, de prefrencia con --global para aplicar
-  a todos los repositorios
+  a todos los repositorios. --list para ver la config
   Con user.name, user.email, alias.[nuevo comando] 'comando'
 
   * **git init**: Inicia un repositorio local
@@ -29,8 +29,20 @@ Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algú
   * **git status**: Muestra el status de los archivos, -s para abreviar
   
   * **git log**: Muestra el historial de versiones de la _rama_, **no** de todo el repositorio
-
-  
+  Algunas banderas son   
+  * -p muetras la diferencias
+  * -n muestra los ultimos n commits
+  * -stat muestra stadisticas
+  * -pretty le da un formato bonito
+  Algunas banderas para pretty son 
+  * oneline para que se muestre en una linea
+  * short lo hace corto
+  * format añade formato
+  * %h hash abreviado
+  * %a arbol abreviado
+  * %an nombre del autor 
+  * 
+  * 
 
 
 
