@@ -77,3 +77,5 @@ Sea _nombre_ el nombre del archivo, _rama_ la rama en cuestión y _commit_ algú
   * **git push -u origin master**: Sube los cambios al repositorio en linea
   * **git push origin rama**: Subo la rama que indico a la rama donde estoy (recomendable usar _git status_ y _git diff_ )
   * **git reset commit**: elimina todos los commits después del señalado
+
+  cambios aqui 
