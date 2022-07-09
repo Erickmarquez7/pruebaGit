@@ -1,0 +1,10 @@
+diff --git a/prueba.py b/prueba.py
+index 3ecf7a2..df11429 100644
+--- a/prueba.py
++++ b/prueba.py
+@@ -1 +1,2 @@
+-#otro archivo de prueba para ver k pedo con el diff gg
+\ No newline at end of file
++#otro archivo de prueba para ver k pedo con el diff gg
++print('Generación del diff')
+\ No newline at end of file
