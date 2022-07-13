@@ -1,34 +1,107 @@
-Ps parte 1 explicar que pedo
-- Como es que guarda la informacion, a través de fotos y refrencias
-Mas no las diferencias
+4.- 
+5.-
+6.-
+7.-
 
-- Explicar los 3 estados de archivo, así como las 3 areas
+#Clase 1
+Git guarda el historial con "capturas".
+Para esto tenemos las 3 áreas.
 
--- Comandos 
-    git config --global user.email = ...
-    git config --global user.name = ...
-    git config --list
+Los respectivos comandos son 
 
-    git help --comando
-    git init
-    git add <archivo>
-    git status
-    git commit <archivo>
+`git init` Inicia un repositorio
+`git add archivos` Añade los cambios al staged
+`git commit`: Confirma los cambios del staged
+- `-m "msg"` para agregar mensaje
+- `-a` para saltarse `git add`
+- `--amend` sobreescribe el mensaje
 
-Ejercicios xd:
-Crear archivo y modificarlo de tal manera que al ejecutar git status -s tengan las letras (No importa el orden)
+Pero como son las "fotos" tenemos que poner quién toma la foto.
 
-??    - Archivo no rastreado
-A     - Archivo recién rastreado
-M     - Cuando modificas el archivo y lo añades al stage, preparado
- M    - Solo modificas el archivo, sin preparar, no has hecho add 
-MM    - Cuando de ultimo minuto modificas el archivo pero no lo has añadido
-        haciendo así que aparezca tanto en confirmado como no confirmado
- D    - Delete no preparado
-D     - Delete preaparado  
+`git config` configuración de git
+- `--global` para hacer cambios en TODOS los repositorios de la compu
+- - `user.name nombre` Configuramos el nombre del autor
+- - `user.email correo` Configuramos el correo del autor
+- - `--list` Para ver la configuración global
+- `--list` Solo veríamos la del repositorio en el que estamos
 
-git add (MM) -> (M)
-pk ya lo subiste al stage
+¿Cómo sabemos en que estado se encuentran nuestros archivos?
+`git status` Muestra el estado de los archivos
+- `-s` Lo muestra de manera simplificada con letras
+La derecha significa que **no** está en el staged
+La izquierda que ya está en el staged
+**A** Recién añadido
+**-M** Modificado pero no preparado
+**M-** Modificado y listo para hacer commit
+**MM** Ambas de arriba
+**-D** Borrado pero no preparado
+**D** Borrado y listo para hacer commit
+**??** Archivo sin seguimiento
+
+
+####Ejercicios
+Jugar con los archivos y conseguir que aparezcan todos los estados.
+
+#Clase 2
+Queremos saber cuáles fueron los cambios
+`git diff archivo` Muestra las diferencias entre el área de trabajo y lo que estaba antes, es decir, lo recíen añadido
+Una vez que apliquemos el `git add`, este comando ya no mostrará nada pues el archivo está en el staged, para eso:
+- `--staged` muestra las diferencias entre lo que está en el staged y el último commit, es decir, será incluido en el commit
+Podemos redirigir la salida con `> diferencia.diff`
+
+Para restaurar archivos a su forma anterior
+`git restore archivo` Restaura el archivo 
+- `-- staged` Lo saca del staged
+
+Historial
+`git log` muestra el historial de commits con hash, nombre y correo del autor
+log puede recibir varias banderas y distintos formatos para que se vea más bonito, algunos son
+- `-n` muestra los últimos *n* commits
+- `-p` nos muestra las diferencias entre commits
+- `--oneline` lo simplifica en una linea
+- `--graph` añade un una representación grafica
+- `--all` nos muestra todas las ramas
+- `--since=n.weeks` o en específico `since='2020-12-10'`
+- `--until='2022-10-10'`
+Además podemos hacerlo con formato 
+- `--pretty="format: "`
+- - `%h` muestra el hash
+- - `%t` muestra el árbol
+- - `%p` hash del padre
+- - `%an` nombre del autor
+- - `%ae` email del autor
+- - `%ar` fecha
+
+#####Ejemplo
+`git log --pretty="format: %h - %an, : %s"
+`
+
+####Ejercicios
+Jugar con los comandos y anotar las diferencias antes y después de cada comando
+
+#Clase 3
+`git log` puede llegar a ser bastante largo, para ello utilizamos alias
+
+`git config --global alias.new 'comando'`
+
+¿Qué es una rama?
+Los commits son como "fotos" de como lucía el trabajo hasta ese entonces, las ramas es el historial de cambios de todas esas fotos. Una rama es básicamente un apuntador a una confiramción (commit).
+`git branch nueva` Crea una nueva rama
+`git checkout rama` Cambiamos de rama
+Podemos utilizar `git checkout -b rama` para crear una rama y saltar a ella
+
+A veces queremos localizar más rápido estos commits
+`git tag v0` Añade una etiqueta ligera al commit actual
+- `-a` hace la etiqueta anotada
+- `-m "msg"` añade el mensaje
+- `ABC123` el hash abreviado para añadir el alias a ese commit
+
+
+
+####Ejercicios
+#Clase 4
+####Ejercicios
+
 ------------------------------------------------------------------------------------
 | Ignorar archivos
 Creando un archivo .gitignore y poniendo los que no queremos que tome en cuenta
@@ -70,17 +143,6 @@ doc/**/*.txt
 
 -- Es recomendable hacer esto al iniciar un repoxd
 
-Editado pero no preparado
-| 
-git diff 
-Así a secas muestra las diferencias entre lo que estoy trabajando y lo que está
-en el stage, cambios que aun NO están preparados
-
-git diff --staged
-Lo que he preparado y será incluido en la confirmacion
-
-git commit -m "con mensaje"
-
 | Eliminar archivos
 Es necesario eliminarlos del staged
 git rm 
@@ -94,47 +156,7 @@ Admite expresiones regulares
 Podemos renombrar archivos con 
 git mv
 
-Para el historial
-git log
-
-Podemos pasarle parametros para buscar lo que queremos
--p mustra el historial con sus diferencias
--2 los ultimos 2
--n los ultimos n
---stat estadisticas 
---pretty añade estilo
-    =oneline lo imprime en una linea
-    =short ps corto
-    =format: para añadir formato
-        "%h"   hash abreviado, total con mayuscula
-        "%t"   hash del arbol abreviado
-        "%p"   hashes del padre abreviado
-        "%an"  nombre del autor
-        "%ae"  email del autor
-        "ar"   fecha
-        "%s"   asunto
-
 git log --pretty="format: %h - %an, : %s"
-
---graph muestra el grafo
---since=2.weeks
-Fecha en especifico
---since="2020-10-10"
-Desde el 2020 octubre 10
---until="2020-20-11"
-hasta el siguiente dia xd
---author
-por autor xd
-
-Conclusion, ps son consultas en bases de datos
-
-git commit --amend sobre escribe el commit anterior, por si se te olvidó algo xd
-ps pa que no hagas dos commits
-
-git restore --staged <archivo> saca archivos del staged
-git restore <archivo> devuelve al estado anterior al archivo modificado
-
-Así que Ojazo con este ultimo xd
 
 
 -----------------------------REMOTOS--------------------------
@@ -163,27 +185,3 @@ git remote show [nombre-rama] muestra mas detallada
 git remote rename [anterior] [nueva] renombra el remoto
 
 {Cambio extras para que diverga la rama equis dedede}
-
-------------------------ALIAS-----------------------------
-Recordemos la configuración de config
-
-git config --global ......
-
-Podemos definir alias de comandos
-
-git config --global alias.[newComm] [commando]
-
-ejemplos
-git config --global alias.co commit
-git config --global alias.st status
-
--------------------------RAMAS--------------------------------
-Las ramas son simplemente apuntadores a los commits xd
-Cuando creamos una nueva rama simplemente creamos un apuntador 
-
-git branch vemos las ramas
-git branch <nueva-rama>
-
-git checkout cambiamos de rama
-
-Cuando hacemos el commit creamos el nodo de la rama
