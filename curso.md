@@ -56,7 +56,7 @@ Para restaurar archivos a su forma anterior
 ejcuta `add` de manera automatica
 
 Cuando cambiamos el nombre de aun archivo git no lo rastrea explicitamente
-por ello tiene un comando `git rm` que basicamente son los siguiente comando juntos
+por ello tiene un comando `git mv` que basicamente son los siguiente comando juntos
 `mv archivo-antes archivo-ahora`
 `git rm archivo-antes`
 `git add archivo-ahora`
