@@ -52,10 +52,21 @@ Podemos redirigir la salida con `> diferencia.diff`
 Para restaurar archivos a su forma anterior
 `git restore archivo` Restaura el archivo 
 - `-- staged` Lo saca del staged
+`git rm archivo` elimina el archivo, además lo prepara en el staged, es decir
+ejcuta `add` de manera automatica
+
+Cuando cambiamos el nombre de aun archivo git no lo rastrea explicitamente
+por ello tiene un comando `git rm` que basicamente son los siguiente comando juntos
+`mv archivo-antes archivo-ahora`
+`git rm archivo-antes`
+`git add archivo-ahora`
+
+El segundo comando NO es igual a `restore` ya que restore solo lo saca del staged
+mientras que `rm` elimina el archivo
 
 Historial
 `git log` muestra el historial de commits con hash, nombre y correo del autor
-log puede recibir varias banderas y distintos formatos para que se vea más bonito, algunos son
+log puede recibir varias banderas y distintos formatos para que se vea más bonito, algunos son 
 - `-n` muestra los últimos *n* commits
 - `-p` nos muestra las diferencias entre commits
 - `--oneline` lo simplifica en una linea
@@ -73,8 +84,7 @@ Además podemos hacerlo con formato
 - - `%ar` fecha
 
 #####Ejemplo
-`git log --pretty="format: %h - %an, : %s"
-`
+`git log --pretty="format: %h - %an, : %s"`
 
 ####Ejercicios
 Jugar con los comandos y anotar las diferencias antes y después de cada comando
